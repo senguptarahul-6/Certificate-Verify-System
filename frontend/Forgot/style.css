@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppings", sans-serif;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1200px;
+}
+
+/* NAVIGATION */
+.main-nav {
+  display: flex;
+  list-style: none;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  color: #fff;
+  /* background-color: #f7f7f7; */
+}
+
+.nav-bar {
+  background-color: #4bb564;
+  color: #fff;
+}
+
+.main-nav a {
+  color: #fff;
+}
+
+.push {
+  margin-left: auto;
+}
+
+li {
+  padding: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.forgot-container {
+  width: 100%;
+  height: 100vh;
+  /* background-color: linear-gradient(rgba(0, 0, 50, 0.5), rgba(0, 0, 0, 0.5)),
+    url(imagefilename.png); */
+  /* background-color: #a7adb3; */
+  background-image: url(forgot-hero.png);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.form-box {
+  width: 90%;
+  max-width: 450px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 50px 60px 70px;
+  text-align: center;
+}
+
+.form-box h1 {
+  font-size: 30px;
+  margin-bottom: 60px;
+  color: #4bb564;
+  position: relative;
+}
+
+.input-field {
+  background: #eaeaea;
+  margin: 15px 0;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  max-height: 65px;
+  transition: max-height 0.5s;
+  overflow: hidden;
+}
+
+input {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  padding: 18px 15px;
+}
+
+.input-field i {
+  margin-left: 15px;
+  color: #999;
+}
+
+.forgot-password {
+  text-align: right;
+  font-size: 13px;
+}
+
+.forgot-password a {
+  text-decoration: none;
+  color: #4bb564;
+}
+
+.btn-field {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-field button {
+  flex-basis: 48%;
+  background: #4bb564;
+  color: #fff;
+  height: 40px;
+  border-radius: 20px;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  margin-top: 40px;
+}
+
+footer {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+  background-color: #1a6f2e;
+  color: #fff;
+}

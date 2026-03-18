@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script src="https://kit.fontawesome.com/13f139fea6.js" crossorigin="anonymous"></script>
+  <title>Register</title>
+</head>
+
+<body>
+  <div class="nav-bar">
+    <nav class="container">
+      <ul class="main-nav">
+        <li><a href="../Home/index.html">LOGO</a></li>
+        <li class="push">
+          <a href="../User authentication/login.html">Login</a>
+        </li>
+        <li>
+          <a href="../Admin authentication/admin-login.html">Admin Login</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="admin-form-container">
+    <div class="form-box">
+      <h1 id="title">Admin Register</h1>
+      <form>
+        <div class="input-group">
+          <div class="input-field" id="nameField">
+            <i class="fa-solid fa-user"></i>
+            <input type="text" placeholder="Enter your name" />
+          </div>
+
+          <div class="input-field">
+            <i class="fa-solid fa-envelope"></i>
+            <input type="email" placeholder="Enter your email id" required />
+          </div>
+
+          <div class="input-field">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" placeholder="Enter your password" id="passwordInput" />
+            <i class="fa-solid fa-eye toggle-password" id="togglePassword" style="
+              margin-right: 15px;
+              cursor: pointer;
+              color: #999;
+              transition: color 0.2s ease;
+            " onclick="
+              const pwdInput = document.getElementById('passwordInput');
+              const icon = this;
+              if (pwdInput.type === 'password') {
+                pwdInput.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+                icon.style.color = '#4bb564';
+              } else {
+                pwdInput.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+                icon.style.color = '#999';
+              }
+            "></i>
+          </div>
+          <p class="forgot-password">
+            <a href="../forgot/forgotpassword.html">Forgot Password?</a>
+          </p>
+        </div>
+        <div class="btn-field">
+          <button type="button" id="signinBtn" class="btn-signin">
+            Login
+          </button>
+          <button type="button" id="signupBtn" class="btn-signup">
+            Register
+          </button>
+        </div>
+        <div style="margin-top: 20px; text-align: center; border-top: 1px solid #e0e0e0; padding-top: 15px;">
+          <p style="font-size: 12px; color: #999; margin-bottom: 10px;">Quick access for testing</p>
+          <button type="button" id="demoLoginBtn" style="
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #e53935, #c62828);
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+          " onmouseover="this.style.background='linear-gradient(135deg, #c62828, #b71c1c)'; this.style.transform='scale(1.02)';"
+            onmouseout="this.style.background='linear-gradient(135deg, #e53935, #c62828)'; this.style.transform='scale(1)';">
+            ⚡ Demo Login (Admin)
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <footer>
+    &copy; 2026 Certificate Verification System | Frontend Project by Rahul
+  </footer>
+  <script src="../js/common.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

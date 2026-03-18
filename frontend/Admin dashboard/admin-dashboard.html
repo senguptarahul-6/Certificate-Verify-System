@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard - Certificate Verification System</title>
+    <script src="https://kit.fontawesome.com/13f139fea6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="admin-dashboard.css" />
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <div class="nav-bar">
+        <nav class="container">
+            <ul class="main-nav">
+                <li><a href="../Home/index.html">LOGO</a></li>
+                <li class="push">
+                    <div class="dropdown">
+                        <button class="btndrop">
+                            Hi, Admin
+                            <i class="fa-solid fa-caret-down"></i>
+                        </button>
+                        <div class="dropcontent">
+                            <a href="#">Account Settings</a>
+                            <a href="#">Dashboard</a>
+                            <a href="../Home/index.html">Logout</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">Dashboard</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main Dashboard Content -->
+    <div class="dashboard-container">
+        <!-- Statistics Cards -->
+        <div class="stats-section">
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-certificate"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 id="totalCertificates">0</h3>
+                    <p>Total Certificates</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 id="totalStudents">0</h3>
+                    <p>Total Students</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 id="recentUploads">0</h3>
+                    <p>Recent Uploads</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Upload Section -->
+        <div class="upload-section">
+            <h2>Upload Student Data</h2>
+            <div class="upload-container">
+                <div class="upload-dropzone" id="dropzone">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <h3>Drag & Drop Excel/CSV File Here</h3>
+                    <p>or</p>
+                    <button class="btn-browse" onclick="document.getElementById('fileInput').click()">
+                        Browse Files
+                    </button>
+                    <input type="file" id="fileInput" accept=".xlsx,.xls,.csv" hidden />
+                    <p class="file-info">Supported formats: .xlsx, .xls, .csv</p>
+                </div>
+                <div class="upload-instructions">
+                    <h4>File Format Requirements:</h4>
+                    <ul>
+                        <li>Column 1: Certificate ID</li>
+                        <li>Column 2: Student Name</li>
+                        <li>Column 3: Internship Domain</li>
+                        <li>Column 4: Start Date (DD/MM/YYYY)</li>
+                        <li>Column 5: End Date (DD/MM/YYYY)</li>
+                    </ul>
+                    <a href="#" class="btn-download-template">
+                        <i class="fa-solid fa-download"></i> Download Template
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Manual Entry Section -->
+        <div class="manual-entry-section">
+            <h2>Add Student Manually</h2>
+            <button class="btn-add-student" id="btnAddStudent">
+                <i class="fa-solid fa-plus"></i> Add New Student
+            </button>
+        </div>
+
+        <!-- Student Data Table -->
+        <div class="table-section">
+            <div class="table-header">
+                <h2>Student Records</h2>
+                <div class="table-controls">
+                    <input type="text" id="searchInput" placeholder="Search by name or certificate ID..."
+                        class="search-input" />
+                    <select id="filterDomain" class="filter-select">
+                        <option value="">All Domains</option>
+                        <option value="Web Development">Web Development</option>
+                        <option value="Data Science">Data Science</option>
+                        <option value="Machine Learning">Machine Learning</option>
+                        <option value="Mobile Development">Mobile Development</option>
+                    </select>
+                </div>
+            </div>
+            <div class="table-wrapper">
+                <table class="student-table">
+                    <thead>
+                        <tr>
+                            <th>Certificate ID</th>
+                            <th>Student Name</th>
+                            <th>Domain</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentTableBody">
+                        <!-- Populated dynamically from API -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="pagination">
+                <button class="btn-page" id="btnPrev">Previous</button>
+                <span class="page-info">Page <span id="currentPage">1</span> of <span id="totalPages">1</span></span>
+                <button class="btn-page" id="btnNext">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Student Modal -->
+    <div class="modal hidden" id="studentModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal">&times;</button>
+            <h2 id="modalTitle">Add New Student</h2>
+            <form id="studentForm">
+                <div class="form-group">
+                    <label for="certId">Certificate ID</label>
+                    <input type="text" id="certId" required />
+                </div>
+                <div class="form-group">
+                    <label for="studentName">Student Name</label>
+                    <input type="text" id="studentName" required />
+                </div>
+                <div class="form-group">
+                    <label for="domain">Internship Domain</label>
+                    <input type="text" id="domain" required />
+                </div>
+                <div class="form-group">
+                    <label for="startDate">Start Date</label>
+                    <input type="date" id="startDate" required />
+                </div>
+                <div class="form-group">
+                    <label for="endDate">End Date</label>
+                    <input type="date" id="endDate" required />
+                </div>
+                <div class="form-buttons">
+                    <button type="submit" class="btn-submit">Save</button>
+                    <button type="button" class="btn-cancel" id="btnCancel">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="overlay hidden" id="overlay"></div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2026 Certificate Verification System | Frontend Project by Rahul
+    </footer>
+
+    <script src="../js/common.js"></script>
+    <script src="admin-dashboard.js"></script>
+</body>
+
+</html>

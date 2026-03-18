@@ -1,0 +1,202 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppings", sans-serif;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1200px;
+}
+
+.nav-bar {
+  background-color: #4bb564;
+  color: #fff;
+}
+
+header {
+  /* background-color: #f7f7f7; */
+  height: 80vh;
+  position: relative;
+
+  background-image: url(hero.png);
+  background-size: cover;
+}
+
+.header-container {
+  width: 1200px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+.header-container-inner {
+  width: 50%;
+}
+
+/* NAVIGATION */
+.main-nav {
+  display: flex;
+  list-style: none;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  color: #fff;
+  /* background-color: #f7f7f7; */
+}
+
+.main-nav a {
+  color: #fff;
+}
+
+.push {
+  margin-left: auto;
+}
+
+li {
+  padding: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* HERO SECTION */
+h1 {
+  font-size: 42px;
+  margin-bottom: 32px;
+  line-height: 1.05;
+}
+
+h4 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 48px;
+}
+
+section {
+  padding: 85px 0;
+  background-color: #f7f7f7;
+}
+
+section p {
+  margin-bottom: 0;
+}
+
+.btn:link,
+.btn:visited {
+  font-size: 20px;
+  font-weight: 600;
+  background-color: #4bb564;
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  padding: 16px 32px;
+  border-radius: 9px;
+}
+
+footer {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+  background-color: #1a6f2e;
+  color: #fff;
+}
+
+/* MODAL WINDOW */
+
+.hidden {
+  display: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+
+  background-color: white;
+  padding: 40px;
+  border-radius: 5px;
+  box-shadow: 0 40px 70px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  font-size: 60px;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+.btn-login:link,
+.btn-login:visited {
+  font-size: 20px;
+  font-weight: 600;
+  background-color: #4bb564;
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  padding: 16px 32px;
+  border-radius: 9px;
+}
+
+.btn-register:link,
+.btn-register:visited {
+  font-size: 20px;
+  font-weight: 600;
+  background-color: #4bb564;
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  padding: 16px 32px;
+  border-radius: 9px;
+}
+
+.modal-btn {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+}
+
+.modal h1 {
+  font-size: 28px;
+}
+
+.show-modal {
+  font-size: 20px;
+  font-weight: 600;
+  background-color: #4bb564;
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  padding: 16px 32px;
+  border-radius: 9px;
+  border: none;
+  cursor: pointer;
+}

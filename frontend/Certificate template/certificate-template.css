@@ -1,0 +1,344 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Georgia", "Times New Roman", serif;
+    background-color: #f5f5f5;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.certificate-container {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    width: 100%;
+}
+
+.certificate-border {
+    border: 15px solid #4bb564;
+    border-image: linear-gradient(135deg, #4bb564, #3a9450) 1;
+    padding: 10px;
+    position: relative;
+}
+
+.certificate-border::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 2px solid #d4af37;
+    pointer-events: none;
+}
+
+.certificate-content {
+    padding: 40px;
+    background: linear-gradient(to bottom,
+            #ffffff 0%,
+            #fafafa 50%,
+            #ffffff 100%);
+    position: relative;
+}
+
+/* Header */
+.certificate-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-placeholder {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #4bb564, #3a9450);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 50%;
+    font-family: "Poppins", sans-serif;
+}
+
+.organization-name {
+    color: #333;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Title */
+.certificate-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.certificate-title h1 {
+    color: #4bb564;
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.title-underline {
+    width: 200px;
+    height: 4px;
+    background: linear-gradient(to right, #4bb564, #d4af37, #4bb564);
+    margin: 15px auto;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 20px;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* Body */
+.certificate-body {
+    text-align: center;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.intro-text {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.student-name {
+    font-size: 36px;
+    color: #333;
+    font-weight: bold;
+    margin: 20px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #4bb564;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.completion-text {
+    font-size: 18px;
+    color: #555;
+    margin: 20px 0 15px 0;
+}
+
+.domain {
+    font-size: 28px;
+    color: #4bb564;
+    font-weight: bold;
+    margin: 15px 0;
+    text-transform: capitalize;
+}
+
+.duration-text {
+    font-size: 16px;
+    color: #666;
+    margin: 20px 0;
+}
+
+.date {
+    font-weight: bold;
+    color: #333;
+}
+
+.performance-text {
+    font-size: 16px;
+    color: #555;
+    margin: 25px auto;
+    max-width: 700px;
+    line-height: 1.6;
+}
+
+/* Certificate ID */
+.certificate-id-section {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-left: 4px solid #4bb564;
+}
+
+.certificate-id-section p {
+    font-size: 16px;
+    color: #333;
+}
+
+.certificate-id-section strong {
+    color: #4bb564;
+}
+
+.certificate-id-section span {
+    font-family: "Courier New", monospace;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Signatures */
+.signature-section {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 40px;
+    align-items: end;
+    margin-bottom: 30px;
+    padding: 0 20px;
+}
+
+.signature-block {
+    text-align: center;
+}
+
+.signature-line {
+    width: 180px;
+    height: 2px;
+    background-color: #333;
+    margin: 0 auto 10px auto;
+}
+
+.signature-label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.signature-name {
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+.seal-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.seal-circle {
+    width: 100px;
+    height: 100px;
+    border: 3px solid #4bb564;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle, #fff 0%, #f0f0f0 100%);
+    box-shadow: 0 0 10px rgba(75, 181, 100, 0.3);
+}
+
+.seal-circle p {
+    font-size: 12px;
+    font-weight: bold;
+    color: #4bb564;
+    text-align: center;
+    line-height: 1.3;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Footer */
+.certificate-footer {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 2px solid #e0e0e0;
+}
+
+.certificate-footer p {
+    font-size: 12px;
+    color: #999;
+    line-height: 1.5;
+}
+
+/* Decorative Elements */
+.certificate-content::before,
+.certificate-content::after {
+    content: "❖";
+    position: absolute;
+    font-size: 24px;
+    color: #d4af37;
+    opacity: 0.3;
+}
+
+.certificate-content::before {
+    top: 20px;
+    left: 20px;
+}
+
+.certificate-content::after {
+    bottom: 20px;
+    right: 20px;
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: #fff;
+        padding: 0;
+    }
+
+    .certificate-container {
+        box-shadow: none;
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .certificate-border {
+        border-width: 10px;
+    }
+
+    .certificate-content {
+        padding: 30px;
+    }
+
+    /* Ensure colors print correctly */
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .certificate-content {
+        padding: 20px;
+    }
+
+    .certificate-title h1 {
+        font-size: 32px;
+    }
+
+    .student-name {
+        font-size: 28px;
+    }
+
+    .domain {
+        font-size: 22px;
+    }
+
+    .signature-section {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .seal-placeholder {
+        order: -1;
+    }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="nav-bar">
+        <nav class="container">
+          <ul class="main-nav">
+            <li><a href="#">LOGO</a></li>
+            <li class="push">
+              <a href="../User authentication/login.html">Login</a>
+            </li>
+            <li>
+              <a href="../Admin authentication/admin-login.html">Admin Login</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="header-container">
+        <div class="header-container-inner">
+          <h1>Verify Internship Certificates Instantly</h1>
+          <p>
+            A secure web platform that allows organizations to issue and verify
+            internship certificates using unique certificate IDs with complete
+            accuracy.
+          </p>
+          <button class="show-modal">Download Certificate</button>
+          <!-- <a href="#" class="btn">Download Certificate</a> -->
+        </div>
+      </div>
+    </header>
+    <section>
+      <div class="container">
+        <h4>About us</h4>
+        <p>
+          The Certificate Verification System is a web-based application
+          developed to simplify and modernize the process of issuing and
+          verifying internship certificates. In many organizations, certificate
+          verification is still handled manually, which can be time-consuming
+          and prone to errors or misuse. This system addresses those challenges
+          by providing a secure and centralized digital platform for managing
+          internship certification data. The application allows administrators
+          to upload student records through an Excel sheet, making bulk data
+          management fast and efficient. The uploaded data includes essential
+          information such as certificate ID, student name, internship domain,
+          and internship start and end dates. By automating data entry through
+          structured uploads, the system reduces manual effort and ensures data
+          accuracy across all issued certificates.
+        </p>
+      </div>
+    </section>
+    <div class="modal hidden">
+      <button class="close-modal">&times;</button>
+      <h1>Login Required!</h1>
+      <p>To download your certificate, please log in or create an account.</p>
+      <div class="modal-btn">
+        <a href="../User authentication/login.html" class="btn-login">Login</a>
+        <a href="../User authentication/login.html" class="btn-register"
+          >Register</a
+        >
+      </div>
+    </div>
+    <div class="overlay hidden"></div>
+    <footer>
+      &copy; 2026 Certificate Verification System | Frontend Project by Rahul
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

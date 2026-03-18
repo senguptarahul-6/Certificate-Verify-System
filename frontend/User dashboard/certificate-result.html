@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Certificate Verification Result</title>
+    <script src="https://kit.fontawesome.com/13f139fea6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="certificate-result.css" />
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <div class="nav-bar">
+        <nav class="container">
+            <ul class="main-nav">
+                <li><a href="../Home/index.html">LOGO</a></li>
+                <li class="push">
+                    <div class="dropdown">
+                        <button class="btndrop">
+                            Hi, User
+                            <i class="fa-solid fa-caret-down"></i>
+                        </button>
+                        <div class="dropcontent">
+                            <a href="#">Account Settings</a>
+                            <a href="dashboard.html">Dashboard</a>
+                            <a href="../Home/index.html">Logout</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="dashboard.html">Dashboard</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="result-container">
+        <!-- Success State -->
+        <div class="result-card hidden" id="successCard">
+            <div class="result-header success">
+                <i class="fa-solid fa-circle-check"></i>
+                <h1>Certificate Verified Successfully!</h1>
+                <p>The certificate is valid and authentic</p>
+            </div>
+
+            <div class="certificate-details">
+                <h2>Certificate Details</h2>
+                <div class="detail-grid">
+                    <div class="detail-item">
+                        <span class="detail-label">Certificate ID:</span>
+                        <span class="detail-value" id="certId">CERT001</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Student Name:</span>
+                        <span class="detail-value" id="studentName">John Doe</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Internship Domain:</span>
+                        <span class="detail-value" id="domain">Web Development</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Start Date:</span>
+                        <span class="detail-value" id="startDate">01/01/2026</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">End Date:</span>
+                        <span class="detail-value" id="endDate">31/03/2026</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Duration:</span>
+                        <span class="detail-value" id="duration">3 months</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="certificate-preview">
+                <h2>Certificate Preview</h2>
+                <div class="preview-box">
+                    <iframe id="certificateFrame" src="../Certificate template/certificate-template.html"></iframe>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn-download" id="btnDownload">
+                    <i class="fa-solid fa-download"></i> Download Certificate
+                </button>
+                <button class="btn-print" id="btnPrint">
+                    <i class="fa-solid fa-print"></i> Print Certificate
+                </button>
+                <button class="btn-back" onclick="window.location.href='dashboard.html'">
+                    <i class="fa-solid fa-arrow-left"></i> Back to Dashboard
+                </button>
+            </div>
+        </div>
+
+        <!-- Error State -->
+        <div class="result-card hidden" id="errorCard">
+            <div class="result-header error">
+                <i class="fa-solid fa-circle-xmark"></i>
+                <h1>Certificate Not Found</h1>
+                <p>The certificate ID you entered is invalid or does not exist in our system</p>
+            </div>
+
+            <div class="error-details">
+                <h3>Possible reasons:</h3>
+                <ul>
+                    <li>The certificate ID was entered incorrectly</li>
+                    <li>The certificate has not been issued yet</li>
+                    <li>The certificate may have been revoked</li>
+                </ul>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn-retry" onclick="window.location.href='dashboard.html'">
+                    <i class="fa-solid fa-rotate-right"></i> Try Again
+                </button>
+                <button class="btn-contact">
+                    <i class="fa-solid fa-envelope"></i> Contact Support
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2026 Certificate Verification System | Frontend Project by Rahul
+    </footer>
+
+    <script src="../js/common.js"></script>
+    <script src="certificate-result.js"></script>
+</body>
+
+</html>
